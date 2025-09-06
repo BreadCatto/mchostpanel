@@ -48,7 +48,28 @@ A modern, production-ready Minecraft server hosting panel built with FastAPI and
    cd mchostpanel
    ```
 
-2. **Configure environment variables**
+2. **Run the interactive setup**
+   ```bash
+   ./start.sh
+   ```
+   
+   Choose option 1 for **Interactive Setup** (recommended) or option 2 for **Quick Start**.
+
+#### Interactive Setup (Recommended)
+
+The interactive setup provides a guided configuration wizard that handles:
+- SSL/HTTPS configuration (Let's Encrypt or custom certificates)
+- Domain and port configuration
+- Database selection (SQLite or PostgreSQL)
+- Pterodactyl Panel integration
+- Automatic generation of all configuration files
+
+Simply run `./start.sh`, choose option 1, and follow the prompts!
+
+#### Manual Configuration (Quick Start)
+
+If you prefer manual configuration:
+1. **Configure environment variables**
    ```bash
    # Backend configuration
    cp backend/.env.example backend/.env
@@ -57,7 +78,7 @@ A modern, production-ready Minecraft server hosting panel built with FastAPI and
    cp frontend/.env.example frontend/.env
    ```
 
-3. **Update configuration files**
+2. **Update configuration files**
    
    Edit `backend/.env`:
    ```env
@@ -95,7 +116,7 @@ A modern, production-ready Minecraft server hosting panel built with FastAPI and
    REACT_APP_DESCRIPTION=Professional Minecraft Server Hosting Panel
    ```
 
-4. **Configure server settings**
+3. **Configure server settings**
    
    Edit `config.json` to customize default server configurations:
    ```json
@@ -126,7 +147,7 @@ A modern, production-ready Minecraft server hosting panel built with FastAPI and
    }
    ```
 
-5. **Deploy with Docker Compose**
+4. **Deploy with Docker Compose**
    ```bash
    # Production deployment
    docker-compose up -d
