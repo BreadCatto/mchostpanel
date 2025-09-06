@@ -1,0 +1,25 @@
+{
+  "server_config": {
+    "default_memory": 1024,
+    "default_disk": 2048,
+    "default_cpu": 100,
+    "default_databases": 1,
+    "default_allocations": 1,
+    "default_backups": 1,
+    "default_egg": 5,
+    "default_nest": 1,
+    "startup_command": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
+    "image": "ghcr.io/pterodactyl/yolks:java_17",
+    "environment": {
+      "SERVER_JARFILE": "server.jar",
+      "VANILLA_VERSION": "latest"
+    }
+  },
+  "app_config": {
+    "app_name": "MCHostPanel",
+    "app_description": "Professional Minecraft Server Hosting Panel",
+    "default_node": 1,
+    "max_servers_per_user": 3,
+    "registration_enabled": true
+  }
+}
